@@ -29,3 +29,11 @@ mvBack x =
 
 setFocus : Zipper -> Node -> Zipper
 setFocus zipper node = {zipper | focus <- node}
+
+-- Update
+avgFocus : Zipper -> Zipper
+avgFocus ({front, focus, back} as zipper) = 
+  let
+    avg = ((head front).charge + (head back).charge) / 2.0
+  in
+    {zipper | focus <- {charge = avg}}
