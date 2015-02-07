@@ -26,3 +26,6 @@ mvBack x =
     back' = tail x.back
   in
     {front = front', focus = focus', back = back'}
+
+setFocus : Zipper -> Node -> Zipper
+setFocus zipper node = {zipper | focus <- node}
