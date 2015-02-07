@@ -18,4 +18,11 @@ mvForward x =
   in
     {front = front', focus = focus', back = back'}
 
-
+mvBack : Zipper -> Zipper
+mvBack x =
+  let
+    focus' = head x.back
+    front' = x.focus::x.front
+    back' = tail x.back
+  in
+    {front = front', focus = focus', back = back'}
